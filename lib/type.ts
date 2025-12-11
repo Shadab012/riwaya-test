@@ -27,7 +27,12 @@ export type Params = Promise<{
 
 export interface FilterProps {
   categories: string[];
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+  maxPrice: number;
+  setMaxPrice: (price: number) => void;
 }
+
 export interface ProductGridProps {
   products: Product[];
 }
