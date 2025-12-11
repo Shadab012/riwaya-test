@@ -27,7 +27,6 @@ export default function Filters({ categories }: FilterProps) {
     router.push(`/?${newParams.toString()}`);
   };
 
-
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
@@ -37,32 +36,32 @@ export default function Filters({ categories }: FilterProps) {
 
   return (
     <div className="flex flex-col gap-6 p-4 border border-primary rounded-md bg-white shadow-sm">
-      
       <div className="flex flex-col flex-wrap gap-2">
         <span className="font-medium text-gray-700 mb-1 w-full">Category</span>
         <button
           onClick={() => updateFilter("category", "")}
           className={`px-4 py-2 rounded-full border text-sm font-medium cursor-pointer ${
-            currentCategory === "" 
-              ? "bg-primary text-white border-primary" 
+            currentCategory === ""
+              ? "bg-primary text-white border-primary"
               : "bg-white text-gray-700 border-gray-300 hover:bg-primary/10"
           } transition`}
         >
           All
         </button>
-        {categories.map((c) => (
-          <button
-            key={c}
-            onClick={() => updateFilter("category", c)}
-            className={`px-4 py-2 rounded-full border text-sm font-medium cursor-pointer ${
-              currentCategory === c
-                ? "bg-primary text-white border-primary"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-primary/10"
-            } transition`}
-          >
-            {c}
-          </button>
-        ))}
+        {categories &&
+          categories.map((c) => (
+            <button
+              key={c}
+              onClick={() => updateFilter("category", c)}
+              className={`px-4 py-2 rounded-full border text-sm font-medium cursor-pointer ${
+                currentCategory === c
+                  ? "bg-primary text-white border-primary"
+                  : "bg-white text-gray-700 border-gray-300 hover:bg-primary/10"
+              } transition`}
+            >
+              {c}
+            </button>
+          ))}
       </div>
 
       <div className="flex flex-col w-full">

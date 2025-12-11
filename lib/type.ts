@@ -1,12 +1,12 @@
-
 export interface Product {
-id: number;
-title: string;
-price: number;
-category: string;
-description: string;
-image: string;
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string;
 }
+
 export interface HomePageProps {
   searchParams?: {
     category?: string;
@@ -14,18 +14,20 @@ export interface HomePageProps {
   };
 }
 export interface MetaProps {
-  title: string;             
-  description: string;        
-  url?: string;              
+  title: string;
+  description: string;
+  url?: string;
 }
 
 export type Params = Promise<{
-    slug?: string;
-    lang?: string | undefined;
-    page?: string | undefined;
-}>
+  slug?: string;
+  lang?: string | undefined;
+  page?: string | undefined;
+}>;
 
 export interface FilterProps {
   categories: string[];
 }
-export interface ProductGridProps { products: Product[] }
+export interface ProductGridProps {
+  products: Product[];
+}
