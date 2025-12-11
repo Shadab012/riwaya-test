@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js Project with Server-Side Rendering and SEO Optimization
 
-## Getting Started
+This is a Next.js
+project bootstrapped with create-next-app
+.
 
-First, run the development server:
+This project uses server-side rendering (SSR) for pages and filters data directly on the server using URL parameters. This approach improves SEO and performance by delivering fully rendered HTML to the client and avoiding unnecessary client-side data fetching.
 
-```bash
+Features
+
+Server-Side Rendering (SSR): Pages are rendered on the server for faster first-page load and better SEO.
+
+Server-Side Filtering via URL: Filters and queries are applied directly on the server based on URL parameters.
+
+Automatic Font Optimization: Uses next/font
+to efficiently load the Geist
+font family.
+
+Next.js 13+ App Router: Fully compatible with modern Next.js routing and layouts.
+
+Getting Started
+
+Run the development server:
+
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
+
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
+in your browser. Pages auto-update as you edit files in the app/ directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+app/page.tsx – Main page with SSR and server-side filtering via URL query parameters.
 
-## Learn More
+app/layout.tsx – Layout component for consistent styling and structure.
 
-To learn more about Next.js, take a look at the following resources:
+lib/apis.ts – API helper functions for server-side data fetching.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Server-Side Filtering & SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+URL parameters (e.g., /products?category=electronics) are read server-side.
 
-## Deploy on Vercel
+Data fetching functions filter results on the server.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Fully rendered HTML is delivered to the client, improving SEO and performance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Learn More
+
+Next.js Documentation
+– Learn about Next.js features and API.
+
+Learn Next.js
+– Interactive Next.js tutorial.
+
+Next.js Deployment
+– Deploy your app on Vercel.
+
+Deploy on Vercel
+
+Deploy your app quickly using the Vercel Platform
+from the creators of Next.js.
